@@ -1,0 +1,356 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div style="background-color:black;color:white;width:auto;border-radius:20px;border-style:solid;border-width:8px;margin-top:50px;text-align: center;">
+  <p>
+    <form  actions= "/data_analysis" class="TextForm" method="POST">{% csrf_token %}
+      <input type="text" name="searches" id="searched">
+      <input type="submit" value="Upload and search">
+    </form>
+  </p>
+</div>
+
+{% if result_present %}
+    <div style="background-color:black;color:white;width:auto;border-radius:20px;border-style:solid;border-width:8px;margin-top:50px;text-align: center;">
+      <br>
+      <p>Found in:</p>
+            {{ found }}
+      <p> </p>
+    </div>
+
+{% endif %}
+
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+
+  <div style="background-color:black;color:white;width:auto;border-radius:20px;border-style:solid;border-width:8px;margin-top:50px;text-align: center;"><p>Top 5 tracks</p></div>
+
+  <!-- Slideshow container 1 -->
+  <div class="mySlides fade">
+      <div style="background-color:#cc0000;border-style:solid;border-width:8px;width:auto;border-radius:20px;text-align: center;">
+        <div class="numbertext">1 / 5</div>
+        <div class="text">21 Guns</div>
+        <p>
+          Do you know what's worth fighting for?<br>
+          When it's not worth dying for?<br>
+          Does it take your breath away?<br>
+          And you feel yourself suffocating?<br>
+          Does the pain weigh out the pride?<br>
+          And you look for place to hide?<br>
+          Did someone break your heart inside?<br>
+          You're in ruins...<br><br>
+          
+          One, 21 guns<br>
+          Lay down your arms<br>
+          Give up the fight<br>
+          One, 21 guns<br>
+          Throw up your arms into the sky<br>
+          You and I<br><br>
+          
+          When you're at the end of the road<br>
+          And you lost all sense of control<br>
+          And your thoughts have taken their toll<br>
+          When your mind breaks the spirit of your soul<br>
+          Your faith walks on broken glass<br>
+          And the hangover doesn't pass<br>
+          Nothing's ever built to last<br>
+          You're in ruins...<br><br>
+          
+          One, 21 guns<br>
+          Lay down your arms<br>
+          Give up the fight<br>
+          One, 21 guns<br>
+          Throw up your arms into the sky<br>
+          You and I<br><br>
+          
+          Did you try to live on your own?<br>
+          When you burned down the house and home?<br>
+          Did you stand too close to the fire?<br>
+          Like a liar looking for forgiveness from a stone<br>
+          
+          When it's time to live and let die<br>
+          And you can't get another try<br>
+          Something inside this heart has died<br>
+          You're in ruins...<br><br>
+          
+          One, 21 guns<br>
+          Lay down your arms<br>
+          Give up the fight<br>
+          One, 21 guns<br>
+          Throw up your arms into the sky<br><br>
+          
+          One, 21 guns<br>
+          Lay down your arms<br>
+          Give up the fight<br>
+          One, 21 guns<br>
+          Throw up your arms into the sky<br>
+          You and I<br><br><br>
+        </p>
+      </div>
+  </div>
+
+  <!-- Slideshow container 2 -->
+  <div class="mySlides fade"> 
+      <div class="numbertext">2 / 5</div>
+      <div class="text">Boulevard of broken dreams</div>
+        <div style="background-color:#cc0000;border-style:solid;border-width:8px;width:auto;border-radius:20px;text-align: center;">
+        <p>
+          I walk a lonely road<br>
+          The only one that I have ever known<br>
+          Don't know where it goes<br>
+          But it's home to me and I walk alone<br><br>
+          
+          I walk this empty street<br>
+          On the boulevard of broken dreams<br>
+          Where the city sleeps<br>
+          And I'm the only one and I walk alone<br><br>
+          
+          I walk alone, I walk alone<br>
+          I walk alone, I walk a<br><br>
+          
+          My shadow's the only one that walks beside me<br>
+          My shallow heart's the only thing that's beating<br>
+          Sometimes I wish someone out there will find me<br>
+          Till then I walk alone<br><br>
+          
+          Ah-ah, ah-ah, ah-ah, aaah-ah<br>
+          Ah-ah, ah-ah, ah-ah<br><br>
+          
+          I'm walking down the line<br>
+          That divides me somewhere in my mind<br>
+          On the borderline<br>
+          Of the edge and where I walk alone<br><br>
+          
+          Read between the lines<br>
+          What's fucked up and everything's alright<br>
+          Check my vital signs to know I'm still alive<br>
+          And I walk alone<br><br>
+          
+          I walk alone, I walk alone<br>
+          I walk alone, I walk a<br><br>
+          
+          My shadow's the only one that walks beside me<br>
+          My shallow heart's the only thing that's beating<br>
+          Sometimes I wish someone out there will find me<br>
+          Till then I walk alone<br><br>
+          
+          Ah-ah, ah-ah, ah-ah, aaah-ah<br>
+          Ah-ah, ah-ah<br>
+          I walk alone<br>
+          I walk a<br>
+          
+          I walk this empty street<br>
+          On the boulevard of broken dreams<br>
+          When the city sleeps<br>
+          And I'm the only one and I walk a<br><br>
+          
+          My shadow's the only one that walks beside me<br>
+          My shallow heart's the only thing that's beating<br>
+          Sometimes I wish someone out there will find me<br>
+          Till then I walk alone<br><br><br>
+        </p>
+        </div>
+    </div>
+
+    <!-- Slideshow container 3 -->
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 5</div>
+        <div class="text">Wake me up when September ends</div>
+          <div style="background-color:#cc0000;border-style:solid;border-width:8px;width:auto;border-radius:20px;text-align: center;">
+          <p>
+              Summer has come and passed<br> 
+              The innocent can never last<br> 
+              Wake me up when September ends<br> 
+              Like my father’s come to pass<br> 
+              Seven years has gone so fast<br> 
+              Wake me up when September ends<br> <br> 
+              
+              Here comes the rain again<br> 
+              Falling from the stars<br> 
+              Drenched in my pain again<br> 
+              Becoming who we are<br> 
+              As my memory rests<br> 
+              But never forgets what I lost<br> 
+              Wake me up when september ends<br> <br> 
+              
+              Summer has come and passed<br> 
+              The innocent can never last<br> 
+              Wake me up when September ends<br> 
+              Ring out the bells again<br> 
+              Like we did when spring began<br> 
+              Wake me up when September ends<br> <br> 
+              
+              Here comes the rain again<br> 
+              Falling from the stars<br> 
+              Drenched in my pain again<br> 
+              Becoming who we are<br> 
+              As my memory rests<br> 
+              But never forgets what I lost<br> 
+              Wake me up when September ends<br> <br> 
+              
+              Summer has come and passed<br> 
+              The innocent can never last<br> 
+              Wake me up when September ends<br> 
+              Like my father’s come to pass<br> 
+              Twenty years has gone so fast<br> 
+              Wake me up when September ends x3<br><br><br>               
+          </p>
+          </div>
+    </div>
+
+    <!-- Slideshow container 4 -->
+    <div class="mySlides fade">
+        <div class="numbertext">4 / 5</div>
+        <div class="text">American Idiot</div>
+          <div style="background-color:#cc0000;border-style:solid;border-width:8px;width:auto;border-radius:20px;text-align: center;">
+          <p>
+              Don't wanna be an American idiot.<br>
+              Don't want a nation under the new mania<br>
+              And can you hear the sound of hysteria?<br>
+              The subliminal mind fuck America.<br><br>
+              
+              Welcome to a new kind of tension.<br>
+              All across the alien nation.<br>
+              Where everything isn't meant to be okay.<br>
+              Television dreams of tomorrow.<br>
+              We're not the ones who're meant to follow.<br>
+              For that's enough to argue.<br><br>
+              
+              Well maybe I'm the faggot America.<br>
+              I'm not a part of a redneck agenda.<br>
+              Now everybody do the propaganda.<br>
+              And sing along to the age of paranoia.<br><br>
+              
+              Welcome to a new kind of tension.<br>
+              All across the alien nation.<br>
+              Where everything isn't meant to be okay.<br>
+              Television dreams of tomorrow.<br>
+              We're not the ones who're meant to follow.<br>
+              For that's enough to argue.<br><br>
+              
+              Don't want to be an American idiot.<br>
+              One nation controlled by the media.<br>
+              Information age of hysteria.<br>
+              It's calling out to idiot America.<br><br>
+              
+              Welcome to a new kind of tension.<br>
+              All across the alien nation.<br>
+              Where everything isn't meant to be okay.<br>
+              Television dreams of tomorrow.<br>
+              We're not the ones who're meant to follow.<br>
+              For that's enough to argue.<br><br><br>
+          </p>
+          </div>
+    </div>
+
+    <!-- Slideshow container 5 -->
+    <div class="mySlides fade">
+        <div class="numbertext">5 / 5</div>
+        <div class="text">Holiday</div>
+          <div style="background-color:#cc0000;border-style:solid;border-width:8px;width:auto;border-radius:20px;text-align: center;">
+          <p>
+              Say hey!<br><br>
+
+              Hear the sound of the falling rain<br>
+              Coming down like an Armageddon flame<br>
+              The shame, the ones who died without a name<br><br>
+              
+              Hear the dogs howling out of key<br>
+              To a hymn called "Faith and Misery"<br>
+              And bleed, the company lost the war today<br><br>
+              
+              I beg to dream and differ from the hollow lies<br>
+              This is the dawning of the rest of our lives<br>
+              On holiday<br><br>
+              
+              Hear the drum pounding out of time<br>
+              Another protester has crossed the line<br>
+              To find the money's on the other side<br><br>
+              
+              Can I get another amen?<br>
+              There's a flag wrapped around a score of men<br>
+              A gag, a plastic bag on a monument<br><br>
+              
+              I beg to dream and differ from the hollow lies<br>
+              This is the dawning of the rest of our lives<br>
+              On holiday<br><br>
+              
+              Three, four<br>
+              (The representative from California has the floor)<br><br>
+              
+              "Sieg Heil" to the president Gasman<br>
+              Bombs away is your punishment<br>
+              Pulverize the Eiffel towers<br>
+              Who criticize your government<br><br>
+              
+              "Bang, bang" goes the broken glass and<br>
+              Kill all the fags that don't agree<br>
+              Trials by fire, setting fire<br>
+              Is not a way that's meant for me<br>
+              Just 'cause<br>
+              Just 'cause, because we're outlaws, yeah<br><br>
+              
+              I beg to dream and differ from the hollow lies<br>
+              This is the dawning of the rest of our lives<br>
+              I beg to dream and differ from the hollow lies<br>
+              This is the dawning of the rest of our lives<br><br>
+              
+              This is our lives on holiday<br><br><br>
+          </p>
+          </div>
+    </div>
+
+
+
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+</div>
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+  </script>
+
+  
+
+{% endblock %}
