@@ -6,7 +6,7 @@
 <div style="background-color:black;color:white;width:auto;border-radius:20px;border-style:solid;border-width:8px;margin-top:50px;text-align: center;">
   <p>
     <form  actions= "/data_analysis" class="TextForm" method="POST">{% csrf_token %}
-      <input type="text" name="searches" id="searched">
+      <input type="text" name="searched" id="searched">
       <input type="submit" value="Upload and search">
     </form>
   </p>
@@ -14,10 +14,8 @@
 
 {% if result_present %}
     <div style="background-color:black;color:white;width:auto;border-radius:20px;border-style:solid;border-width:8px;margin-top:50px;text-align: center;">
-      <br>
-      <p>Found in:</p>
+      <p>"{{ searched }}" was found in:</p>
             {{ found }}
-      <p> </p>
     </div>
 
 {% endif %}

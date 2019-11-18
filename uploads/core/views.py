@@ -52,23 +52,26 @@ def data_analysis(request): #kluczowa definicja
     print('Data analysis')
     if request.method == 'POST':
         searched = request.POST.get('searched', "")
-        with open('text.txt','w') as test:
-            test.write(searched)
+        '''with open('text.txt','w') as test:
+            test.write(searched)'''
         
         print (searched)
-        with open('static\data\songs.csv','rt')as f:
+        with open(r'static\data\songs.csv','rt')as f:
             data = csv.reader(f)
-            found={}
+            found=[]
             for (i, row) in enumerate(data):
                 print(i)
-                if searched in row[1]:
-                    found = row[0]
+                if searched.lower() in row[1].lower():
+                    found.append(row[0])
                     print('In song: %s' % found)
-                    break
+                    with open('text.txt','a') as test:
+                        test.write('\n!')
                 else:
                     print('Not found' % found)
             print('Data analysis')
+            result = " - ".join(found)
             return render(request, 'data_analysis.html',
-                        {'result_present': True,
-                        'found': found})
+                        {'searched': searched,
+                        'result_present': True,
+                        'found': result})
     return render(request, 'data_analysis.html')
