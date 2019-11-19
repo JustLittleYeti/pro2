@@ -17,6 +17,7 @@ input[type=text], select {
   border-radius: 20px;
   box-sizing: border-box;
   background-color:gray;
+  cursor: pointer;
 }
 
 /*przycisk do zatwierdzenia tekstu*/
